@@ -848,6 +848,8 @@ control-content-subtitle {
 
 .clients-content-background {
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .clients-content-background-left,
