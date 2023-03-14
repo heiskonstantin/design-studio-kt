@@ -313,48 +313,99 @@ header {
 
 .projects-block-content-info-items__subtitle {
   color: var(--white);
+  font-family: "Nunito Sans";
+  font-style: normal;
+  font-weight: 400;
   font-size: 13px;
   line-height: 21px;
+  opacity: 0;
+  position: absolute;
 }
 
-.projects-block-content-nav-arrows,
-.projects-block__items {
+.projects-block-content-info-items__subtitle.active {
+  opacity: 1;
+  position: relative;
+}
+
+.projects-block-content-nav-arrows {
   justify-content: flex-start;
   align-items: center;
   gap: 20px;
   cursor: pointer;
 }
 
-.projects-block-dot--active,
-.projects-block-dot--non-active {
+.projects-block-dot {
+  display: flex;
+  gap: 17px;
+}
+
+.projects-block__dot {
   width: 9.5px;
   height: 9.5px;
-  background: rgba(255, 255, 255, 1);
+  background: rgba(255, 255, 255, 0.3);
   border-radius: 30px;
 }
 
-.projects-block-dot--non-active {
-  background: rgba(255, 255, 255, 0.3);
+.projects-block__dot.active {
+  background: rgba(255, 255, 255, 1);
 }
 
 .projects-block__items {
-  gap: 60px;
   padding-bottom: 45px;
 }
 
-.projects-block__item--active,
-.projects-block__item--non-active {
+.projects-block__item {
   font-size: 14px;
   line-height: 19px;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  margin-bottom: 6px;
 }
 
-.projects-block__item--active {
-  color: var(--gold);
-  border-bottom: 1px solid #e3b873;
+.projects-block__item.active {
+  border-bottom: 1px solid var(--gold);
   padding-bottom: 6px;
-  margin-top: 6px;
+  color: var(--gold);
+}
+
+.projects-block-image-content .projects-block__image {
+  width: 679px;
+  height: 482px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.projects-block__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.projects-block__image.active {
+  position: relative;
+  opacity: 1;
+  visibility: visible;
+}
+
+.projects-block-content-info-items__subtitle,
+.projects-block-content-info-items__subtitle.active,
+.projects-block__dot,
+.projects-block__dot.active,
+.projects-block__item,
+.projects-block__item.active,
+.projects-block__image,
+.projects-block__image.active {
+  transition: 500ms ease-in-out;
+}
+
+.mobile-arrows {
+  display: none;
 }
 
 /* CONTROL BLOCK */
