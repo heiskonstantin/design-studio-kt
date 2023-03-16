@@ -60,24 +60,17 @@ function initSlider() {
 
   function initInfo() {
     images.forEach((elem, index) => {
-      let elementCity = `<p class="projects-block-content-info-items__subtitle n${index} ${
-        index === 0 ? "active" : ""
-      }" data-index='${index}'>${elem.city}</p>`;
-      let elementApart = `<p class="projects-block-content-info-items__subtitle n${index} ${
-        index === 0 ? "active" : ""
-      }" data-index='${index}'>${elem.apartArea}</p>`;
-      let elementTime = `<p class="projects-block-content-info-items__subtitle n${index} ${
-        index === 0 ? "active" : ""
-      }" data-index='${index}'>${elem.repairTime}</p>`;
-      let elementCost = `<p class="projects-block-content-info-items__subtitle n${index} ${
-        index === 0 ? "active" : ""
-      }" data-index='${index}'>${elem.repairCost}</p>`;
-
-      sliderCity.innerHTML += elementCity;
-      sliderApart.innerHTML += elementApart;
-      sliderTime.innerHTML += elementTime;
-      sliderCost.innerHTML += elementCost;
+      sliderCity.innerHTML += createInfoField(elem.city, index);
+      sliderApart.innerHTML += createInfoField(elem.apartArea, index);
+      sliderTime.innerHTML += createInfoField(elem.repairTime, index);
+      sliderCost.innerHTML += createInfoField(elem.repairCost, index);
     });
+  }
+
+  function createInfoField(text, index) {
+    return `<p class="projects-block-content-info-items__subtitle n${index} ${
+      index === 0 ? "active" : ""
+    }" data-index='${index}'>${text}</p>`;
   }
 
   function initLink() {
